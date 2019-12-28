@@ -4,6 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
             }
         }
         stage('Test') {
